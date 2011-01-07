@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>umts-phonebook.pl - A GSM/UMTS terminal phonebook tool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>umts-phonebook.pl - A GSM/UMTS terminal phonebook tool</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p><strong>umts-phonebook.pl</strong> [options]</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>The <strong>umts-phonebook.pl</strong> script allows you to read entries from a handset's
+phonebook or to write entries to it. On most terminals, this gives you
+access to both the SIM phonebook and the terminal's own phonebook. This
+allows you to make backups of your phonebook to plaintext files and
+restore them at a later date.</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<pre>
+ Common options:
+  -d          debugging mode
+  -l&lt;log&gt;     write log to &lt;log&gt;
+  -h          display this help message
+  -p&lt;port&gt;    terminal is connected to serial port &lt;port&gt;
+              e.g. '\\.\COM12', '/dev/usb/acm/0'
+  -z          use dummy terminal
+  
+ Options:
+  -b&lt;book&gt;    operate on phonebook &lt;book&gt; from terminal
+              examples : SM (SIM), ME (terminal)
+  -f&lt;file&gt;    read/write phonebook to &lt;file&gt;
+  -s          write to the selected phonebook in terminal
+  -x          extract selected phonebook from terminal</pre>
+
+</body>
+
+</html>

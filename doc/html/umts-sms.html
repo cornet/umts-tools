@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>umts-sms.pl - An SMS tool for GSM/UMTS terminals</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#notes">NOTES</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>umts-sms.pl - An SMS tool for GSM/UMTS terminals</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p><strong>umts-sms.pl</strong> [options] [&lt;msisdn&gt; &lt;msg&gt;]</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>You can send SMS by using the <strong>umts-sms.pl</strong> script. Both text mode
+and PDU mode are supported, and messages are automatically sent as
+concatenated SMS as needed.</p>
+<p>There are two modes for sending SMS : text mode and PDU mode. Both of
+these modes are supported by <strong>umts-sms.pl</strong>. If your terminal supports
+it, PDU mode is preferable as it allows better support of character
+sets.</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<pre>
+ Common options:
+  -d          debugging mode
+  -l&lt;log&gt;     write log to &lt;log&gt;
+  -h          display this help message
+  -p&lt;port&gt;    terminal is connected to serial port &lt;port&gt;
+              e.g. '\\.\COM12', '/dev/usb/acm/0'
+  -z          use dummy terminal
+ 
+ Options:
+  -f          make the SMS a 'flash' SMS (not stored)
+  -e&lt;coding&gt;  encode outgoing messages using &lt;encoding&gt;
+              ('gsm' or 'ucs2')
+  -g&lt;store&gt;   get messages stored in &lt;store&gt; from terminal
+              examples : SM (SIM), ME (terminal)
+  -s&lt;sca&gt;     use &lt;sca&gt; as the Service Center Address
+  -r          request a delivery report</pre>
+<p>
+</p>
+<hr />
+<h1><a name="notes">NOTES</a></h1>
+<p>Samsung terminals seem to require the Service Center Address (SCA) to
+be set explicitly to send SMS. You can use the -s option to achieve
+this.</p>
+
+</body>
+
+</html>

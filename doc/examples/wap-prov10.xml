@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE wap-provisioningdoc PUBLIC "-//WAPFORUM//DTD PROV 1.0//EN"
+"http://www.wapforum.org/DTD/prov.dtd">
+<wap-provisioningdoc>
+<characteristic type="PXLOGICAL">
+  <parm name="PROXY-ID" value="proxy.foo.bar"/>
+  <parm name="NAME" value="FOO_MMS"/>
+  <parm name="STARTPAGE" value="http://wap.foo.bar/"/>
+  <characteristic type="PXPHYSICAL">
+    <parm name="PHYSICAL-PROXY-ID" value="Gateway 1"/>
+    <parm name="PXADDR" value="192.168.0.1"/>
+    <parm name="PXADDRTYPE" value="IPV4"/>
+    <parm name="TO-NAPID" value="FOO_GPRS"/>
+    <characteristic type="PORT">
+      <parm name="PORTNBR" value="80"/>
+      <parm name="SERVICE" value="OTA-HTTP-PO"/>
+    </characteristic>
+  </characteristic>
+</characteristic>
+<characteristic type="NAPDEF">
+  <parm name="BEARER" value="GSM-GPRS"/>
+  <parm name="NAPID" value="FOO_GPRS"/>
+  <parm name="NAME" value="FOO_GPRS"/>
+  <parm name="NAP-ADDRESS" value="fooapn"/>
+  <parm name="NAP-ADDRTYPE" value="APN"/>
+</characteristic>
+<characteristic type="APPLICATION">
+  <parm name="APPID" value="w4"/>
+  <parm name="NAME" value="FOO_MMS"/>
+  <parm name="ADDR" value="http://192.168.0.2:80/mms"/>
+</characteristic>
+</wap-provisioningdoc>

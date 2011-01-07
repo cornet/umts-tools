@@ -1,0 +1,6 @@
+my_PKGNAME = umts-tools
+
+include $(top_srcdir)/Makefile.j-pkg
+
+Makefile.j-pkg: /usr/share/j-misc/rules/j-pkg.mk
+	cp $< $@

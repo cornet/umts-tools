@@ -1,0 +1,15 @@
+# Example configuration file for umts-tools
+# - on POSIX systems, place this in ~/.umts-tools/config
+# - on Windows systems, place this in c:\.umts-tools\config
+#
+# Remove the # sign to uncomment a line
+
+# Default port on which to look for the GSM/UMTS terminal, if none in
+# specified with the -p command line parameter.
+#
+# - for Linux:
+# port = /dev/ttyACM0
+#
+# - for Windows:
+# port = \\.\COM15
+

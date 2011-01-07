@@ -1,0 +1,2 @@
+SUBDIRS = examples html man
+

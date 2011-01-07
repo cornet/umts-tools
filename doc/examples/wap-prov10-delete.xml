@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE wap-provisioningdoc PUBLIC "-//WAPFORUM//DTD PROV 1.0//EN"
+"http://www.wapforum.org/DTD/prov.dtd">
+<wap-provisioningdoc>
+<characteristic type="BOOTSTRAP">
+  <parm name="NAME" value=""/>
+</characteristic>
+</wap-provisioningdoc>

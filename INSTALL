@@ -1,0 +1,65 @@
+INSTALLATION NOTES FOR UMTS-TOOLS
+
+
+_ Installation on POSIX platforms _
+
+If you are using any decent POSIX distribution, you will find Perl in
+a prepackaged form. You will also need to install the following Perl
+modules:
+
+ - Device::SerialPort
+ - Config::General
+ - Digest::HMAC
+ - Crypt::Rijndael
+ - File::Type
+ - XML::Simple
+
+If you want to make use of the Graphic User Interface (GUI), you will also
+need to install these Perl modules:
+
+  - Glib
+  - Gtk2
+
+_ Installation on WIN32 platforms _
+
+1. Install Perl
+
+You can get a good distribution of Perl for Win32 here:
+http://www.activestate.com/Products/ActivePerl/
+
+
+2. Install the required Perl modules
+
+To install the Perl modules required by umts-tools, simply run the batch
+file "install-win32.bat" that is distributed with umts-tools.
+
+
+3. Install support for Gtk2::Perl (optional, to make use of GUI)
+
+First install the files needed to run Gtk2 on Windows by retrieving the
+following file and extracting it to C:\
+
+http://dev.jerryweb.org/dist/gtk2-win32-deps-2.4.14.zip
+
+Now you need to make sure Windows looks for the libraries you have just
+installed. To do so, go to the 'Control Panel', then 'System', and in the
+'Advanced' tab, click on 'Environment Variables'. In the 'System variables'
+view, make sure the PATH variable currently ends with a semi-colon (";") or
+add one as necessary. Then add the following to the end of the PATH variable:
+
+  C:\usr\bin;
+
+If you use a proxy server to access Internet you will need to set the
+HTTP_PROXY environment variable in order to retrieve Perl modules
+from Internet.  To do so you would type from a command prompt:
+
+set HTTP_PROXY=http://myuser:mypass@proxy.mydomain.org:80/
+
+Finally, install the necessary Perl modules by typing the following commands
+from the command prompt:
+
+ppm install http://gtk2-perl.sourceforge.net/win32/ppm/ExtUtils-PkgConfig.ppd
+ppm install http://gtk2-perl.sourceforge.net/win32/ppm/Glib-1080.ppd
+ppm install http://gtk2-perl.sourceforge.net/win32/ppm/Gtk2-1080.ppd
+
+

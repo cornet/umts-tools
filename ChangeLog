@@ -1,0 +1,153 @@
+umts-tools 0.9.4
+ * UMTS::Phonebook:Entry : simplify phonebook format
+
+umts-tools 0.9.3
+ * UMTS::DataLog::Packet : add support for SMS reassembly
+ * umts-multipart.pl : allow different encoding for page and objects
+ * UMTS::Phonebook : improve parsing of available phonebooks
+ * UMTS::SMS : improve parsing of available storages
+
+umts-tools 0.9.2
+ * umts-multipart.pl : add script for generating multipart/mixed pages
+
+umts-tools 0.9.1
+ * Call.pm : go to idle screen before dialing video calls
+ * Call.pm : fix polling interval to meet expected call duration
+ * umts-answer.pl : fix breakage introduced in 0.9.0
+
+umts-tools 0.9.0
+ * umts-pdp.pl : allow passing of init string and number as arguments
+ * umts-pdp.pl : on Win32 check return status of rasdial.exe
+ * umts-p2klog.pl : add script for parsing Motorola P2k data logs
+ * umts-wappush.pl : add support for more WBXML PublicIDs
+ * WSP::PDU : add support for ConfirmedPush, Disconnect and Suspend
+ * UMTS::WBXML : provide wrapper around libwbxml2 utilities
+ * umts-drm.pl : add support for WBXML Right Objects
+ * UMTS::L3 : add parsers for 3GPP layer 3 messages
+ * examples : add DRM content and configuration file examples
+ * umts-drm.pl : for SD encoding, get ContentURI from the Right Object
+ * doc : install HTML documentation and examples
+
+umts-tools 0.8.1
+ * doc : improve all documentation, add HTML version to distribution
+ * SMS : move SMS PDU encoding / decoding to SMS::PDU*
+ * Call.pm : add video dialing support for recent Motorola handsets
+ * umts-drm.pl : add script for encoding / decoding DRM FL and SD files
+ * install-win32.bat : add script to install Perl dependencies on Win32
+
+umts-tools 0.8.0
+ * PDP.pm : experimental module for PDP context establishment / release
+ * WSP::Headers : new module for encoding/decoding WSP headers
+ * WSP::PDU : new module for encoding/decoding WSP Protocol Data Units
+ * Dialer.pm : remove a surplus reset on the terminal
+ * all : add a 'bail' flag to the terminal to handle aborting
+ * SMS : add support for UCS2 encoding, fix 7bit encoding (septet alignment)
+ * umts-sms.pl : use true concatenated SMS instead of multiple SMS
+ * umts-sms.pl : add an option to select the SMS encoding (gsm or ucs2)
+ * doc : add manpages for umts-tools
+
+umts-tools 0.7.4
+ * Info.pm : recognise Motorola E770v terminal
+ * umts-wappush.pl: fix sending to Nokia handsets (thanks Robert Grabowski)
+
+umts-tools 0.7.3
+ * umts-gui.pl : allow sorting by column in SMS and Phonebook views
+ * INSTALL : add installation instructions for Gtk2::Perl
+
+umts-tools 0.7.2
+ * umts-dialer.pl : fix broken -c option 
+
+umts-tools 0.7.1
+ * Call.pm : hangup Huawei handsets with AT+CHUP
+ * examples : add HTTP service type to OTAP example
+ * examples : add an example to delete OTAP settings
+
+umts-tools 0.7.0
+ * umts-dialer.pl : make it possible to adjust pause between calls
+ * umts-answer.pl : add script to handle mobile-terminated (MT) calls
+ * Log.pm : use local time for timestamps instead of GMT time
+ * Dialer.pm : write results and log to separate files
+ * Dialer.pm : log intermediate results periodically
+ * Call.pm : implement video call monitoring
+ * Call.pm : add support for SEMC video call dialing
+ * SMS.pm : implement basic extraction of SMS stored on terminal
+ * umts-gui.pl : add a Gtk2-based graphic user interface
+ * Core.pm : add support for user preference file (requires Config::General)
+ * SMS.pm : add support for delivery notifications
+
+umts-tools 0.6.0
+ * Terminal.pm : fix voice dialing on Nokia terminals
+ * Terminal.pm : fix SMS sending on Nokia/Samsung terminals
+ * Terminal.pm : improve UE type detection
+ * smser.pl : display warnings about unsupported operations
+ * all : use unit testing where possible
+ * Dummy.pm : add a 'dummy' terminal for testing purposes
+ * Dummy/*.pm : add various dummy terminals to emulate known handsets
+ * NetPacket/*.pm : add decoding of various packet types
+ * Terminal.pm : add function to monitor call status and detect call drops
+ * Dialer.pm : keep track of both call failures and call drops
+ * dialer.pl : add options to specify destination number and call duration
+ * wappush.pl : fix Service Indication WAP PUSH, support Service Loading
+
+umts-tools 0.5.1
+ * INSTALL : correct some typos, add info about proxy
+ * phonebook.pl : add examples of ports in help message 
+ * Dialer.pm : fix success / failure count of calls
+ * Terminal.pm : improve checking of dialing success, depending on UE type
+
+umts-tools 0.5.0
+ * Terminal.pm : use custom PDU handling, drop dependency on GSM::SMS
+ * Pcap.pm : add functions to perform dumps of various packets such as PDUs
+ * ota.pl : add options to dump WSP/PDU packets to a pcap dump file
+ * Terminal.pm : improve modem resetting, should fix occasional hangs
+ * smser.pl : add option to send 'flash' SMS
+ * sms-piper.pl : script that acts as an e-mail to SMS gateway
+
+umts-tools 0.4.0
+ * ota.pl : full support for OTA settings, both Nokia/Ericsson and OMA
+ * ota.pl : add Pcap dump support for use with Ethereal
+ * NetPacket : import NetPacket to build IP/UDP headers
+
+umts-tools 0.3.7
+ * Terminal : add command to change TE character set
+ * phonebook.pl : use GSM 7bit encoding for handbook handling
+ * Terminal : tighter checks on SMS operations return codes
+ * Terminal : only send AT+CMGF=0 once when sending an SMS in PDU mode
+ * ota.pl : basic client for sending OTA wap settings
+
+umts-tools 0.3.6
+ * Terminal : turn off echo (ATE0) to simplify parsing of responses
+ * Terminal : fix 'reset' routine to work reliably on Linux
+ * Terminal : more reliable 'wait' method, reduces CPU usage
+ * Dialer, Terminal : experimental video call support for Motorola phones
+ * Terminal, phonebook.pl : read and write phonebook from terminal
+ * FAQ : add a Frequently Asked Questions file
+ * Terminal : segment long AT commands into 64 byte chunks
+ * Terminal : use GSM 7bit encoding for SMS messages
+
+umts-tools 0.3.5
+ * Dialer, Terminal : new constructors using named arguments
+ * phonebook.pl : add a script to manipulate terminal phonebooks
+ * all scripts : remove hard-coded values, get parameters from command line
+ * win32 : add a Win32 distribution that includes bits of GSM::SMS
+ * smser.pl : make it possible to chose between PDU and text mode
+ * Dialer : beep when a call setup fails
+
+umts-tools 0.3.0
+ * Terminal : add functions to send SMS messages
+ * smser.pl : add a script to send SMS messages
+
+umts-tools 0.2.1
+ * INSTALL : added installation notes
+ * Dialer : new class containing all mass dialing code
+ * Dialer : do not use sleep for less than a second, it hogs the CPU!
+
+umts-tools 0.2.0
+ * Terminal : be more tolerant when parsing AT+CGMx command responses
+ * Terminal : retrieve IMEI from terminal
+ * Log : open and close log file for each new entry
+ * dialer.pl : print the current call number
+
+umts-tools 0.1.0
+ * initial public release
+

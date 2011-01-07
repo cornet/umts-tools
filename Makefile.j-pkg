@@ -1,0 +1,97 @@
+#
+# j-pkg.mk - common Makefile.pkg-based build system
+# Copyright (C) 2004-2006 Jeremy Laine <jeremy.laine@m4x.org>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+
+# Changes
+#  2006-01-14 : v1.5
+#   * Move to j-pkg.mk
+#  
+#  2006-01-03 : v1.4
+#   * Fix broken multiline sed calls
+#
+#  2005-12-05 : v1.3
+#   * Add LyX backup files to CLEANFILES
+#
+#  2005-11-05 : v1.2
+#   * Support HtmlUrl element for manpages
+#   * Add KDevelop backup files to CLEANFILES
+#   * Initialise my_* variables
+#
+
+my_BUILDVERSION = 1.4
+my_PKGDOCDIR = $(prefix)/share/doc/$(my_PKGNAME)
+my_PKGDATADIR = $(prefix)/share/$(my_PKGNAME)
+my_USERCONFIG = .$(my_PKGNAME)rc
+
+my_NOINSTFILES =
+my_INSTFILES =
+my_CLEANFILES =
+my_EXTRA_DIST =
+noinst_DATA = $(my_INSTFILES) $(my_NOINSTFILES)
+
+EXTRA_DIST = $(my_EXTRA_DIST) $(my_INSTFILES)
+CLEANFILES = $(my_CLEANFILES) *.c~ *.cpp~ *.css~ *.h~ *.lyx~ *.php~ *.pl~ *.pm~ *.t~ *.tpl~
+
+# 
+# variable substitutions
+# 
+%: %.in
+	sed -e 's,\@PACKAGE\@,$(my_PKGNAME),g' \
+            -e 's,\@VERSION\@,@VERSION@,g' \
+            -e 's,\@USERCONFIG\@,$(my_USERCONFIG),g' \
+            -e 's,\@PERLMOD\@,@PERLMOD@,g' \
+            -e 's,\@datadir\@,$(my_PKGDATADIR),g' \
+            -e 's,\@docdir\@,$(my_PKGDOCDIR),g' $< > $@
+	if [ -n "$(findstring $@,$(bin_SCRIPTS))" ]; then chmod +x $@; fi
+
+# 
+# man from SGML generation
+# 
+%.tmp.lyx: %.lyx
+	cp $< $@
+
+%.sgml: %.tmp.lyx
+	lyx-qt -e linuxdoc $^
+	mv $*.tmp.sgml $@
+
+%.1: %.sgml
+	cat $< | sed -e 's/<htmlurl url=\"\([^\"]*\)\" name=.*>/<em>\1<\/em>/g' > $(<:%.sgml=%.tmp.sgml)
+	linuxdoc -B txt -m $(<:%.sgml=%.tmp.sgml)
+	mv -f $(<:%.sgml=%.tmp.man) $@
+	rm -f $(<:%.sgml=%.tmp.sgml)
+
+%.html: %.sgml
+	linuxdoc -B html -T 0 $<
+	cat $(@:%.html=%-1.html) | grep -v $@ | grep -v ^Next | grep -v ^Previous | grep -v "^<HR>" > $@
+	rm -f $(@:%.html=%-1.html)
+
+# 
+# install and uninstall
+# 
+install-data-local: $(my_INSTFILES)
+	if [ -n "$(my_INSTDIR)" ]; then mkdir -p $(DESTDIR)$(my_INSTDIR); fi
+	@list='$(my_INSTFILES)'; for myfile in $$list; do \
+	$(INSTALL_DATA) $(srcdir)/$$myfile $(DESTDIR)$(my_INSTDIR); \
+	done
+
+uninstall-local:
+	@list='$(my_INSTFILES)'; for myfile in $$list; do \
+	rm -f $(DESTDIR)$(my_INSTDIR)/$$myfile; \
+	done
+	-if [ -n "$(my_INSTDIR)" ]; then rmdir $(DESTDIR)$(my_INSTDIR); fi
+

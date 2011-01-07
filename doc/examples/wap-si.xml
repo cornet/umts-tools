@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE si PUBLIC "-//WAPFORUM//DTD SI 1.0//EN" "http://www.wapforum.org/DTD/si.dtd">
+<si>
+ <indication href="http://umts-tools.jerryweb.org/wap/" si-id="si@jerryweb.org" si-expires="2010-02-06T15:35:00Z">
+  This message is powered by umts-tools!
+ </indication>
+</si>

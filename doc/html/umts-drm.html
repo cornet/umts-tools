@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>umts-drm.pl - A Digital Rights Management tool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p>umts-drm.pl - A Digital Rights Management (DRM) tool</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p><strong>umts-drm.pl</strong> &lt;action&gt; [options]</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p>The <strong>umts-drm.pl</strong> script allows you to manipulate OMA Digital
+Rights Management (DRM) v1 files in Separate Delivery or Forward Lock
+formats.</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<pre>
+ Actions:
+  fl-encode   produce a DRM FL protected file from clear content
+  fl-decode   produce clear content from a DRM FL protected file
+  ro-encode   produce a WBXML Right Object from an XML Right Object
+  ro-decode   produce an XML Right Object from a WBXML Right Object
+  sd-encode   produce a DRM SD protected file from clear content
+  sd-decode   produce clear content from a DRM SD protected file
+ 
+ Options:
+  -c&lt;type&gt;    use &lt;type&gt; as Content-Type instead of guessing it
+              from the input (for encoding only)
+  -d          debugging mode
+  -h          display a help message
+  -i&lt;input&gt;   read input from &lt;input&gt; instead of standard input
+  -o&lt;output&gt;  write output to &lt;output&gt; instead of standard output
+  -r&lt;ro&gt;      read the Right Object from the &lt;ro&gt; XML file (for SD only)
+  -s&lt;file&gt;    set the SD headers from &lt;file&gt;'s content (for SD encoding only)
+  -S&lt;headers&gt; set the SD headers to &lt;headers&gt; (for SD encoding only)
+  -w&lt;ro&gt;      read the Right Object from the &lt;ro&gt; WBXML file (for SD only)</pre>
+
+</body>
+
+</html>

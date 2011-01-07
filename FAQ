@@ -1,0 +1,60 @@
+_ 1. WHERE CAN I GET MORE INFORMATION ABOUT UMTS-TOOLS ? _
+
+The umts-tools homepage lives at the following address:
+
+  http://umts-tools.jerryweb.org/
+  
+
+_ 2. WHAT HANDSETS HAVE BEEN TESTED ? _
+
+Below is a list of operations which have been tested on various 3G 
+handsets.
+
+Motorola E1000, V980, C980, V1050
+ - voice call dialing            OK
+ - video call dialing            OK
+ - phonebook reading             OK
+ - phonebook writing             OK
+ - SMS sending (PDU mode)        OK
+ - SMS sending (text mode)       OK
+ - WAP PUSH sending              NOK
+
+Nokia 6630
+ - voice call dialing            OK
+ - phonebook reading             NOK
+ - phonebook writing             NOK
+ - SMS sending (PDU mode)        OK
+ - SMS sending (text mode)       OK
+ - WAP PUSH sending              OK
+
+Sagem myX3-2
+ - voice call dialing            OK
+ - SMS sending (PDU mode)        OK
+ - SMS sending (text mode)       OK
+ - WAP PUSH sending              OK
+ 
+Samsung Z107
+ - voice call dialing            OK
+ - video call dialing            NOK (key commands not supported)
+ - phonebook reading             NOK
+ - phonebook writing             NOK
+ - SMS sending (PDU mode)        OK  (SCA needs to be set)
+ - SMS sending (text mode)       OK  (SCA needs to be set)
+ - WAP PUSH sending              OK  (SCA needs to be set)
+
+Sharp V802SH, V902SH
+ - voice call dialing            OK
+ - phonebook reading             OK
+ - phonebook writing             NOK
+ - SMS sending (PDU mode)        NOK
+ - SMS sending (text mode)       NOK
+
+Sony Ericsson V800, V600
+ - voice call dialing            OK
+ - video call dialing            OK
+ - phonebook reading             OK
+ - phonebook writing             OK
+ - SMS sending (PDU mode)        OK
+ - SMS sending (text mode)       NOK
+ - WAP PUSH sending              OK
+

@@ -1,0 +1,17 @@
+Source: umts-tools
+Section: web
+Priority: optional
+Maintainer: Jeremy Lainé <jeremy.laine@m4x.org>
+Build-Depends: cdbs (>= 0.4.38), debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: umts-tools
+Architecture: all
+Depends: perl-modules, libdevice-serialport-perl, libdigest-hmac-perl, libconfig-general-perl, libwww-perl, libcrypt-rijndael-perl, libxml-simple-perl, libfile-type-perl, libhtml-tree-perl
+Recommends: libwbxml2-utils, libgtk2-perl
+Description: Tools for manipulating UMTS and GSM terminals
+ A set of tools that allow you to manipulate UMTS and GSM terminals
+ through a serial interface.
+ .
+ Homepage: http://www.umts-tools.org/
+

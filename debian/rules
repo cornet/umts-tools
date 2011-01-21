@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS := --prefix=/usr
+DEB_MAKE_INSTALL_TARGET := install DESTDIR=$(CURDIR)/debian/tmp
+DEB_INSTALL_DOCS_ALL = FAQ
+DEB_COMPRESS_EXCLUDE := .dcf .dm .wbxml
+
+binary-install/umts-tools::
+	mv debian/tmp/usr/bin debian/umts-tools/usr
+	install -d debian/umts-tools/usr/share
+	mv debian/tmp/usr/share/umts-tools debian/umts-tools/usr/share
+	mv debian/tmp/usr/share/man debian/umts-tools/usr/share
+	mv debian/tmp/usr/share/doc/umts-tools/examples debian/umts-tools/usr/share/doc/umts-tools
+	mv debian/tmp/usr/share/doc/umts-tools/html debian/umts-tools/usr/share/doc/umts-tools
+
